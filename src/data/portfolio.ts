@@ -37,6 +37,7 @@ export interface PortfolioData {
         role: string;
         company: string;
         period: string;
+        enPeriod?: string;
         description: string;
         enDescription?: string;
     }[];
@@ -181,6 +182,7 @@ export const portfolioData: PortfolioData = {
             role: "Front-End Intern",
             company: "AC Time International",
             period: "Juil – Août 2025",
+            enPeriod: "Jul – Aug 2025",
             description: "Développement front-end avec Vue.js, HTML, CSS. Interfaces responsives et amélioration UX.",
             enDescription: "Front-end development with Vue.js, HTML, CSS. Responsive interfaces and UX improvement.",
         },
@@ -188,6 +190,7 @@ export const portfolioData: PortfolioData = {
             role: "Final-Year Project Intern",
             company: "Farhat Hached Hospital",
             period: "Fév – Juin 2023",
+            enPeriod: "Feb – Jun 2023",
             description: "Projet biomédical : fauteuil roulant électrique autonome.",
             enDescription: "Biomedical project: autonomous electric wheelchair.",
         },
