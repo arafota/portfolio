@@ -228,6 +228,13 @@ export const portfolioData: PortfolioData = {
             date: "2023",
         },
         {
+            title: "Fundamentals of Deep Learning",
+            issuer: "NVIDIA",
+            date: "Avril 2026",
+            enDate: "April 2026",
+            image: "/nvidia certif.png",
+        },
+        {
             title: "AI for Beginners",
             issuer: "HP LIFE",
             date: "Décembre 2025",
