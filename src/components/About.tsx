@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { User, MapPin, Mail, Phone, Calendar, FileText, Linkedin, Github } from "lucide-react";
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
 
 import { useLanguage } from "@/context/LanguageContext";
@@ -29,7 +30,7 @@ export default function About() {
                             {language === 'fr' ? 'Ingénieur Logiciel Passionné & Créatif' : 'Passionate & Creative Software Engineer'}
                         </h2>
                         <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                            {language === 'fr' ? portfolioData.profile.about : portfolioData.profile.enAbout}
+                            {language === 'fr' ? portfolioData.profile.about : (portfolioData.profile.enAbout || portfolioData.profile.about)}
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -93,9 +94,11 @@ export default function About() {
                                 <div className="m-auto text-center w-full">
                                     <div className="relative w-48 h-48 mx-auto mb-6 group">
                                         <div className="absolute inset-0 bg-blue-500 rounded-full blue-glow opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                                        <img
+                                        <Image
                                             src={portfolioData.profile.profileImage}
                                             alt={portfolioData.profile.name}
+                                            fill
+                                            sizes="192px"
                                             className="relative w-full h-full object-cover rounded-full border-2 border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl"
                                         />
                                     </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Layers } from "lucide-react";
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -45,9 +46,11 @@ export default function Projects() {
                             <div className="h-48 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors duration-500 z-10" />
                                 {project.image ? (
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
+                                        fill
+                                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                 ) : (
@@ -57,9 +60,15 @@ export default function Projects() {
                                 )}
                                 <div className="absolute top-4 right-4 z-20">
                                     {project.github && (
-                                        <div className="p-2 bg-slate-900/90 backdrop-blur-md rounded-full text-white/70 hover:text-white cursor-pointer transition-colors shadow-lg shadow-black/50">
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`GitHub repository for ${project.title}`}
+                                            className="p-2 bg-slate-900/90 backdrop-blur-md rounded-full text-white/70 hover:text-white cursor-pointer transition-colors shadow-lg shadow-black/50"
+                                        >
                                             <Github size={16} />
-                                        </div>
+                                        </a>
                                     )}
                                 </div>
                             </div>
