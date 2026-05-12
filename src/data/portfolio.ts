@@ -84,6 +84,7 @@ export const portfolioData: PortfolioData = {
         profileImage: "/profile.jpg",
         cvUrl: "/Saad_Arafet_CV.pdf",
         about: "Étudiant en 5ᵉ année d’ingénierie logicielle, spécialisé en front-end development, passionné par l’électronique et la robotique. Solide expérience dans la conception d’interfaces web modernes, ergonomiques et performantes. Curieux, analytique et adaptable, je cherche une opportunité de PFE au sein d’une entreprise innovante pour appliquer mes compétences techniques et analytiques.",
+        enAbout: "5th-year software engineering student, specialized in front-end development, with a strong passion for electronics and robotics. Solid experience in designing modern, user-friendly, and high-performance web interfaces. Curious, analytical, and adaptable, I am looking for a graduation project opportunity in an innovative company to apply my technical and analytical skills.",
     },
     skills: {
         languages: ["Java", "PHP (Laravel)", "Python", "C++", "Dart", "Kotlin", "Swift", "SQL", "TypeScript"],
@@ -226,6 +227,13 @@ export const portfolioData: PortfolioData = {
             title: "CCNA 1 & CCNA 2",
             issuer: "Cisco",
             date: "2023",
+        },
+        {
+            title: "Fundamentals of Deep Learning",
+            issuer: "NVIDIA",
+            date: "Avril 2026",
+            enDate: "April 2026",
+            image: "/nvidia certif.png",
         },
         {
             title: "AI for Beginners",

@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, ExternalLink, Calendar, Briefcase } from "lucide-react";
+import { Award, Calendar, Briefcase } from "lucide-react";
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Certifications() {
+    const { language } = useLanguage();
+
     return (
         <section id="certifications" className="py-24 bg-slate-900/30">
             <div className="container mx-auto px-6">
@@ -16,7 +20,7 @@ export default function Certifications() {
                         className="inline-flex items-center space-x-2 text-blue-400 font-bold tracking-widest uppercase text-xs mb-4"
                     >
                         <Award size={14} />
-                        <span>Reconnaissances</span>
+                        <span>{language === "fr" ? "Reconnaissances" : "Recognition"}</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -25,7 +29,7 @@ export default function Certifications() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-bold font-display mb-4 text-gradient"
                     >
-                        Certifications & Prix
+                        {language === "fr" ? "Certifications & Prix" : "Certifications & Awards"}
                     </motion.h2>
                 </div>
 
@@ -41,9 +45,11 @@ export default function Certifications() {
                         >
                             {cert.image ? (
                                 <div className="relative h-40 mb-6 rounded-lg overflow-hidden border border-white/10">
-                                    <img
+                                    <Image
                                         src={cert.image}
                                         alt={cert.title}
+                                        fill
+                                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors" />
@@ -64,7 +70,7 @@ export default function Certifications() {
                                 </div>
                                 <div className="flex items-center text-xs text-slate-500">
                                     <Calendar size={14} className="mr-2" />
-                                    {cert.date}
+                                    {language === "fr" ? cert.date : (cert.enDate || cert.date)}
                                 </div>
                             </div>
                         </motion.div>

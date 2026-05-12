@@ -1,21 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Layout, Database, Cpu, Brain, Wrench, Globe } from "lucide-react";
+import { Code2, Layout, Database, Cpu, Brain, Wrench } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
 
-const skillCategories = [
-    { name: "Langages", icon: <Code2 />, skills: portfolioData.skills.languages },
-    { name: "Front-end", icon: <Layout />, skills: portfolioData.skills.frontend },
-    { name: "Back-end & DB", icon: <Database />, skills: portfolioData.skills.backend },
-    { name: "IA & Data", icon: <Brain />, skills: portfolioData.skills.ia },
-    { name: "Électronique & Robotique", icon: <Cpu />, skills: portfolioData.skills.robotics },
-    { name: "Outils & DevOps", icon: <Wrench />, skills: portfolioData.skills.tools },
-];
-
 export default function Skills() {
     const { language } = useLanguage();
+    const skillCategories = [
+        { name: language === "fr" ? "Langages" : "Languages", icon: <Code2 />, skills: portfolioData.skills.languages },
+        { name: "Front-end", icon: <Layout />, skills: portfolioData.skills.frontend },
+        { name: "Back-end & DB", icon: <Database />, skills: portfolioData.skills.backend },
+        { name: language === "fr" ? "IA & Data" : "AI & Data", icon: <Brain />, skills: portfolioData.skills.ia },
+        { name: language === "fr" ? "Électronique & Robotique" : "Electronics & Robotics", icon: <Cpu />, skills: portfolioData.skills.robotics },
+        { name: language === "fr" ? "Outils & DevOps" : "Tools & DevOps", icon: <Wrench />, skills: portfolioData.skills.tools },
+    ];
 
     return (
         <section id="skills" className="py-24 bg-slate-900/30">
