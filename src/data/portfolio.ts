@@ -89,7 +89,7 @@ export const portfolioData: PortfolioData = {
     skills: {
         languages: ["Java", "PHP (Laravel)", "Python", "C++", "Dart", "Kotlin", "Swift", "SQL", "TypeScript"],
         frontend: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "React.js", "Next.js", "Bootstrap", "Tailwind CSS", "WordPress", "Flutter", "UI/UX Design"],
-        backend: ["Laravel", "MySQL", "MongoDB", "SQLite", "Supabase"],
+        backend: ["Laravel", "Nest.js", "MySQL", "MongoDB", "SQLite", "Supabase"],
         ia: ["Machine Learning", "Data Analysis", "Data Visualization (pandas, NumPy, scikit-learn, matplotlib)"],
         robotics: ["Arduino", "Raspberry Pi", "microcontrôleurs", "capteurs/actionneurs"],
         tools: ["Git/GitHub", "VS Code", "Laragon", "Figma", "Android Studio", "XCode", "Arduino IDE", "Proteus", "Wokwi"],
